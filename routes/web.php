@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use app\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +14,6 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',function(){
+   return view('posts.index') ;
 });
-
-Route::get('/posts', [PostController::class, 'index']); 
