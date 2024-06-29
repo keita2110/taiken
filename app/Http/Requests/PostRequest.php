@@ -18,6 +18,7 @@ class PostRequest extends FormRequest
         return [
             'post.title'=>'required|string|max:100',
             'post.body'=>'required|string|max:5000',
+            //ここでは、'post'という名前の入力データの中にある'title'フィールドを指している
         ];
     }
 }
