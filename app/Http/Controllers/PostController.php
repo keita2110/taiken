@@ -45,4 +45,11 @@ class PostController extends Controller
         $post->fill($input_post)->save();
         return redirect('/posts/'.$post->id);
     }
+    
+    public function delete(Post $post){
+        $post->delete();
+        //これは物理削除　今回は論理削除なのでモデルクラスを修正する。
+        
+        return redirect('/');
+    }
 }
