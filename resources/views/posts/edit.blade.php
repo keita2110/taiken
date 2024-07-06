@@ -30,6 +30,24 @@
             <p class='body_error' style="color:red">{{$errors->first('post.body')}}</p>
         </div> 
         
+        </div>
+        
+        <div class="category">
+            <h2>Category</h2>
+            <select name="post[category_id]">
+                <!--select要素のname属性はフォームの送信時に送信されるデータの名前を示す
+                　  post[category_id]=$category->idというように送信される
+                -->
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">
+                        {{$category->name}}
+                    </option>
+                    <!--選択した$category->nameの$category->idが実際にフォームに送信されていることを示す
+                    -->
+                @endforeach
+            </select>
+        </div>
+        
         <div class="store">
             <input type="submit" value="保存" />
         </div>
